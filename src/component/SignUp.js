@@ -7,6 +7,7 @@ import { useFormik } from "formik"
 import { SignUpData } from "../Redux/action/actionindex"
 import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
+import { useHistory } from 'react-router-dom';
 
 
 const SignUp = () => {
@@ -43,6 +44,9 @@ const SignUp = () => {
     //     console.log(signUpData);
     // }
 
+    const history = useHistory()
+
+
     const formik = useFormik({
         initialValues: {
             username: '',
@@ -57,8 +61,9 @@ const SignUp = () => {
                 theme:'colored',
                 autoClose:2000
             })
+            history.push("/")
             resetForm({val:''})
-            console.log(val);
+            // console.log(val);
         },
         validationSchema: Yup.object({
             username: Yup.string().required('Required!!').max(15),
@@ -76,7 +81,7 @@ const SignUp = () => {
             <div className="SignUp">
                 <Navbar />
                 <div className="signUpdiv">
-                    <Card className="signUpCard">
+                    <Card className="signUpCard shadow-lg">
                         <h4 className="text-center fw-bold  text-decoration-underline">SignUp</h4>
                         <div className="mt-3">
                             <form
@@ -85,7 +90,7 @@ const SignUp = () => {
                             >
                                 <div>
                                     <label>UserName:</label>
-                                    <TextField className="mt-2" type="text" id="username" size="small" label="Enter UserName" fullWidth
+                                    <TextField className="mt-2" type="text" autoComplete="off" id="username" size="small" label="Enter UserName" fullWidth
                                         // onChange={handleUserName}
                                         onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.username}
                                     />
@@ -101,7 +106,7 @@ const SignUp = () => {
                                 </div>
                                 <div className="mt-3">
                                     <label>Email:</label>
-                                    <TextField className="mt-2" type="email" size="small" id="email" label="Enter Email" fullWidth
+                                    <TextField className="mt-2" type="email" autoComplete="off" size="small" id="email" label="Enter Email" fullWidth
                                         onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.email}
                                     // onChange={handleEmail}
                                     />
@@ -117,7 +122,7 @@ const SignUp = () => {
                                 </div>
                                 <div className="mt-3">
                                     <label>Password:</label>
-                                    <TextField className="mt-2" type="password" size="small" id="password" label="Enter Password" fullWidth
+                                    <TextField className="mt-2" type="password" autoComplete="off" size="small" id="password" label="Enter Password" fullWidth
                                         onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.password}
                                     // onChange={handlePassword}
                                     />

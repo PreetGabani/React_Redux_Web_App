@@ -35,31 +35,52 @@ const Login = () => {
     //     console.log(loginData);
     // }
 
+    const [isLoggedIn,setisLoggedIn] = useState(false)
+    localStorage.setItem("isLoggedIn",isLoggedIn)
     const Data = useSelector((state) => state.signUpReducer.SignUp);
     const history = useHistory()
 
     const formik = useFormik({
         initialValues: {
-            email:'',
-            password:''
+            email: '',
+            password: ''
         },
-        onSubmit:(val)=>{
-            if(Data.Email==val.email && Data.Password==val.password){
-                history.push("/Dashboard")
-            }else{
-                toast.error("Login Failed",{
-                    position: "top-center",
-                    hideProgressBar: true,
-                    theme:'colored',
-                    autoClose:2000
-                })
-            }
-            console.log(val);
+        onSubmit: (val) => { 
+            Data.map((item) => {
+                if (item.Email == val.email) {
+                    if (item.Email == val.email && item.Password == val.password) {
+                        toast.success("Login Sucessful", {
+                            position: "top-center",
+                            hideProgressBar: true,
+                            theme: 'colored',
+                            autoClose: 2000
+                        })
+                        setisLoggedIn(true);
+                        history.push("/Dashboard");
+                    } else if (item.Password !== val.password){
+                        toast.error("Password Not Mached", {
+                            position: "top-center",
+                            hideProgressBar: true,
+                            theme: 'colored',
+                            autoClose: 2000
+                        })
+                    }
+                    else {
+                        toast.error("Login Failed", {
+                            position: "top-center",
+                            hideProgressBar: true,
+                            theme: 'colored',
+                            autoClose: 2000
+                        })
+                        console.log('else');
+                    }
+                }
+            })
         },
         validationSchema: Yup.object({
             email: Yup.string().email('Invalid Email').required('Required!!'),
-            password: Yup.string().required('Required!!').min(6).matches("[.!@#$%^&*()_+-=]" ,
-              "At least one special character required").max(12),
+            password: Yup.string().required('Required!!').min(6).matches("[.!@#$%^&*()_+-=]",
+                "At least one special character required").max(12),
         })
     })
 
@@ -68,18 +89,18 @@ const Login = () => {
             <div className="Login">
                 <Navbar />
                 <div className="logindiv">
-                    <Card className="LoginCard">
-                        <h4 className="text-center fw-bold  text-decoration-underline">Login</h4>
+                    <Card className="LoginCard shadow-lg">
+                        <h4 className="text-center fw-bold text-decoration-underline">Login</h4>
                         <div className="mt-3">
-                            <form 
+                            <form
                                 onSubmit={formik.handleSubmit}
-                                // onSubmit={handleLogin}
+                            // onSubmit={handleLogin}
                             >
                                 <div>
                                     <label>Email:</label>
-                                    <TextField className="mt-2" type="text" id="email" size="small" label="Enter Email" fullWidth 
+                                    <TextField className="mt-2" autoComplete="off" type="text" id="email" size="small" label="Enter Email" fullWidth
                                         onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.email}
-                                        // onChange={handleEmail}
+                                    // onChange={handleEmail} 
                                     />
                                     <div>
                                         {
@@ -93,9 +114,9 @@ const Login = () => {
                                 </div>
                                 <div className="mt-3">
                                     <label>Password:</label>
-                                    <TextField className="mt-2" id="password" type="password" size="small" label="Enter Password" fullWidth 
+                                    <TextField className="mt-2" id="password" autoComplete="off" type="password" size="small" label="Enter Password" fullWidth
                                         onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.password}
-                                        // onChange={handlePassword}
+                                    // onChange={handlePassword}
                                     />
                                     <div>
                                         {
@@ -107,10 +128,10 @@ const Login = () => {
                                         }
                                     </div>
                                 </div>
-                                <Button type="submit"  variant="contained" fullWidth className="mt-3 text-capitalize loginBtn">LogIn</Button>
-                               <div className="mt-3 justify-content-end d-flex">
+                                <Button type="submit" variant="contained" fullWidth className="mt-3 text-capitalize loginBtn">LogIn</Button>
+                                <div className="mt-3 justify-content-end d-flex">
                                     <span>New User? &nbsp;<Link className="text-decoration-none link-success" to="/SignUp">Click Here</Link> </span>
-                               </div>
+                                </div>
                             </form>
                         </div>
                     </Card>

@@ -17,6 +17,10 @@
 .NavBar{
     position: fixed;
     width: 100%;
+    padding-left: 40px;
+    padding-right: 40px;
+    z-index: 15;
+    top: 0;
 }
 
 .navLink{
@@ -24,8 +28,31 @@
     padding: 10PX;
     box-sizing: border-box;
     border-radius: 10px;
-    border: 1px solid white;
-    color:white;
+    border: 1px solid rgb(0, 0, 0);
+    color:rgb(0, 0, 0);
+}
+
+.navBorder{
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: rgb(220, 220, 220);
+
+}
+
+.Toastify__toast-container--top-center.Toast {
+    width: 245px;
+}
+
+.navLink:hover{
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+}
+.Toast{
+    margin-top: -18px;
+}
+
+.Toastify__close-button{
+    margin-top: 10px;
 }
 
 #basic-navbar-nav{
@@ -33,15 +60,16 @@
     flex-grow: unset;
 }
 
-.navLink:hover{
-    background-color: white;
-    color: black;
-}
 
 .css-bhp9pd-MuiPaper-root-MuiCard-root.LoginCard{
     min-width: 400px;
     padding: 25px 50px;
     border-radius: 25px;
+    background-color:rgb(226, 226, 226) ;
+}
+
+.css-bhp9pd-MuiPaper-root-MuiCard-root.LoginCard:hover{
+    background-color: rgb(216, 216, 216)
 }
 
 .logindiv{
@@ -57,7 +85,7 @@
 }
 
 .loginBtn.css-1fu7jd5-MuiButtonBase-root-MuiButton-root:hover{
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(51, 51, 51);
 }
 
 .signUpdiv{
@@ -71,6 +99,11 @@
     min-width: 400px;
     padding: 25px 50px;
     border-radius: 25px;
+    background-color: rgb(226, 226, 226);
+}
+
+.css-bhp9pd-MuiPaper-root-MuiCard-root.signUpCard:hover{
+    background-color: rgb(216, 216, 216)
 }
 
 .signUpBtn.css-1fu7jd5-MuiButtonBase-root-MuiButton-root{
@@ -79,7 +112,91 @@
 }
 
 .signUpBtn.css-1fu7jd5-MuiButtonBase-root-MuiButton-root:hover{
+    background-color: rgb(51, 51, 51);
+}
+
+.dashboard{
+    background-color: rgb(194, 194, 194);
+    min-height: 100vh;
+    position: fixed;
+    min-width: 100%;
+}
+
+.createProject{
+    background-color: rgb(194, 194, 194);
+    min-height: 100vh;
+    position: fixed;
+    min-width: 100%
+}
+
+
+.createProjectStart{
+    /* margin: 60px 40px 0px 40px; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+}
+
+.body{
+    top: 0;
+}
+
+
+.Component-paginationSelectRoot-4{
+    display: none !important;
+}
+
+.createProjectCard.css-bhp9pd-MuiPaper-root-MuiCard-root{
+    min-width: 400px;
+    padding: 30px 50px 40px 50px;
+    border-radius: 25px;
+    background-color: rgb(226, 226, 226);
+}
+
+.createProjectBtn.css-1fu7jd5-MuiButtonBase-root-MuiButton-root{
     background-color: black;
+    border-radius: 20px;
+}
+
+.createProjectBtn.css-1fu7jd5-MuiButtonBase-root-MuiButton-root:hover{
+    background-color: rgb(51, 51, 51);
+}
+
+.createProjectCard.css-bhp9pd-MuiPaper-root-MuiCard-root:hover{
+    background-color: rgb(216, 216, 216)
+}
+
+.MuiPaper-root.MuiPaper-elevation2{
+    background-color:rgb(216, 216, 216);
+}
+
+.MuiPaper-root.MuiPaper-elevation2:hover{
+    background-color:rgb(208, 208, 208);
+}
+
+.MTableHeader-header-13{
+    background-color: rgb(196, 195, 195) !important;
+}
+
+.MTableHeader-header-13:hover{
+    background-color: rgb(189, 188, 188) !important;
+}
+
+@media only screen and (max-width: 1400px) {
+    .css-bhp9pd-MuiPaper-root-MuiCard-root.signUpCard{
+        margin-top: 75px;
+    }
+    .navbar-nav{
+        margin-top: -5px;
+    }
+    .MuiPaper-elevation2{
+        margin-top: 100px;
+        margin-left: 100px;
+        margin-right: 100px;
+        margin-bottom: 50px;
+    }
+    
 }
 
 @media only screen and (max-width: 991px) {
@@ -94,7 +211,12 @@
     .navbar-toggler{
         margin-top: -10px;
     }
+    .navbar-nav{
+        margin-left: -20px;
+        margin-bottom: 10px;
+    }
 }
+
 
 @media only screen and (max-width: 450px) {
     .navbar-brand{
@@ -117,13 +239,18 @@
         margin: 35px 10px 0px 10px;
         padding: 20px 30px;
     }
-}
-
-@media only screen and (max-width: 1400px) {
-    .css-bhp9pd-MuiPaper-root-MuiCard-root.signUpCard{
-        margin-top: 75px;
+    .NavBar{
+        padding-left: 10px;
+        padding-right: 10px;
     }
-    .navbar-nav{
-        margin-top: -5px;
+    .createProjectCard.css-bhp9pd-MuiPaper-root-MuiCard-root{
+        min-width: unset;
+        margin: 35px 10px 0px 10px;
+        padding: 20px 30px;
+    }
+    .MuiPaper-elevation2{
+        margin-left: 10px;
+        margin-right: 10px;
+        /* padding: ; */
     }
 }
