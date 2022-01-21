@@ -1,7 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Navbar from './Navbar';
 import { Card, TextField, Button } from '@mui/material';
-import { Link } from 'react-router-dom';
 import * as Yup from 'yup';
 import { useFormik } from "formik"
 import { CreateProjectData } from "../Redux/action/actionindex"
@@ -30,7 +29,6 @@ const CreateProject = () => {
           })
           history.push("/Dashboard")
           resetForm({val:''})
-          // console.log(val);
       },
       validationSchema: Yup.object({
           title: Yup.string().required('Required!!').max(20),
@@ -64,7 +62,7 @@ const CreateProject = () => {
                                       <small className="text-danger">
                                           {formik.errors.title}
                                       </small>
-                                  ) : null
+                                  ) : ""
                               }
                           </div>
                       </div>
@@ -79,7 +77,7 @@ const CreateProject = () => {
                                       <small className="text-danger">
                                           {formik.errors.member}
                                       </small>
-                                  ) : null
+                                  ) : ""
                               }
                           </div>
                       </div>
@@ -94,7 +92,7 @@ const CreateProject = () => {
                                       <small className="text-danger">
                                           {formik.errors.period}
                                       </small>
-                                  ) : null
+                                  ) : ""
                               }
                           </div>
                       </div>
