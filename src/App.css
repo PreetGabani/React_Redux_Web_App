@@ -129,6 +129,13 @@
     min-width: 100%
 }
 
+.editProject{
+    background-color: rgb(194, 194, 194);
+    min-height: 100vh;
+    position: fixed;
+    min-width: 100%
+}
+
 
 .createProjectStart{
     /* margin: 60px 40px 0px 40px; */
@@ -138,9 +145,12 @@
     height: 100vh;
 }
 
-/* .body{
-    top: 0;
-} */
+.editProjectStart{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+}
 
 
 .Component-paginationSelectRoot-4{
@@ -164,6 +174,15 @@
     background-color: rgb(51, 51, 51);
 }
 
+.cancleBtn.css-1fu7jd5-MuiButtonBase-root-MuiButton-root{
+    border-radius: 20px; 
+    margin-left: 10px;
+}
+
+.cancleBtn.css-1fu7jd5-MuiButtonBase-root-MuiButton-root:hover{
+    background-color: rgb(32, 43, 202);
+}
+
 .createProjectCard.css-bhp9pd-MuiPaper-root-MuiCard-root:hover{
     background-color: rgb(216, 216, 216)
 }
@@ -184,18 +203,19 @@
     background-color: rgb(189, 188, 188) !important;
 }
 
-
-.loader{
-    background: radial-gradient(circle, rgb(232, 232, 232) 0%, rgb(163, 163, 163) 100%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+.editProjectStartCard.css-bhp9pd-MuiPaper-root-MuiCard-root{
+    min-width: 400px;
+    padding: 30px 50px 40px 50px;
+    border-radius: 25px;
+    background-color: rgb(226, 226, 226);
 }
 
+.editProjectStartCard.css-bhp9pd-MuiPaper-root-MuiCard-root:hover{
+    background-color: rgb(216, 216, 216)
+}
 
 .load {
-    background: radial-gradient(circle, rgb(177, 177, 177) 0%, rgb(151, 151, 151) 100%);
+    background: radial-gradient(circle, rgb(196, 196, 196) 0%, rgb(145, 145, 145) 100%);
     height: 100vh;
     display: flex;
     grid-template-columns: repeat(auto-fit,minmax(250px,1fr));

@@ -16,7 +16,7 @@ const navbar = () => {
                                 {
                                     isLogin == "true" ? (
                                         <Nav>
-                                            <NavLink className="navLink mt-1 text-center" to="/Dashboard">Home</NavLink>
+                                            <NavLink className="navLink mt-1 text-center ms-3" to="/Dashboard">Home</NavLink>
                                             <NavLink className="navLink mt-1 text-center ms-3" to="/CreateProject">Create Project</NavLink>
                                             <NavLink className="navLink mt-1 text-center ms-3" to="/">Logout</NavLink>
                                         </Nav>

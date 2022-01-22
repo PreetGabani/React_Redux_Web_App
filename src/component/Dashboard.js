@@ -2,10 +2,15 @@ import React from 'react';
 import Navbar from './Navbar';
 import MaterialTable from 'material-table';
 import { useSelector } from 'react-redux'
+import { DeleteCreateProjectData } from "../Redux/action/actionindex"
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 
 const Dashboard = () => {
-    // const history = useHistory()
+    const history = useHistory()
+    const dispatch = useDispatch();
 
     const Data = useSelector((state) => state.CreateProjectReducer.CreateProject);
 
@@ -28,10 +33,35 @@ const Dashboard = () => {
                             // search:false,
                             // title: false,
                             // paging: false,
-                            // actionsColumnIndex: -1
+                            actionsColumnIndex: -1
                         }}
+                        actions={[
+                            {
+                                icon: 'delete',
+                                tooltip: 'Delete',
+                                onClick: (event, rowData) => {
+                                    // localStorage.getItem("CreateProjectReducer")
+                                    const confirmBox = window.confirm("Do you really want to delete ")
+                                    if (confirmBox === true) {
+                                        dispatch(DeleteCreateProjectData(rowData.id))
+                                        toast.success("Delete Sucessfully", {
+                                            position: "top-center",
+                                            hideProgressBar: true,
+                                            theme: 'colored',
+                                            autoClose: 2000
+                                        })
+                                    }
+                                }
+                            },
+                            {
+                                icon: 'edit',
+                                tooltip: 'Edit',
+                                onClick: (event, rowData) => {
+                                    history.push(`/ProjectEdit/${rowData.id}`)
+                                }
+                            }
+                        ]}
                     />
-                    
                 </div>
             </div>
         </>
