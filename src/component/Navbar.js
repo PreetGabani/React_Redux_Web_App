@@ -16,14 +16,14 @@ const navbar = () => {
                                 {
                                     isLogin == "true" ? (
                                         <Nav>
-                                            <NavLink className="navLink mt-1 text-center ms-3" to="/Dashboard">Home</NavLink>
-                                            <NavLink className="navLink mt-1 text-center ms-3" to="/CreateProject">Create Project</NavLink>
-                                            <NavLink className="navLink mt-1 text-center ms-3" to="/">Logout</NavLink>
+                                            <NavLink exact activeClassName="active" className="navLink mt-1 text-center ms-3" to="/Dashboard">Home</NavLink>
+                                            <NavLink exact activeClassName="active" className="navLink mt-1 text-center ms-3" to="/CreateProject">Create Project</NavLink>
+                                            <NavLink exact activeClassName="active" className="navLink mt-1 text-center ms-3" to="/">Logout</NavLink>
                                         </Nav>
                                     ) :
                                         <Nav>
-                                            <NavLink className="navLink mt-1 text-center ms-3" to="/">Login</NavLink>
-                                            <NavLink className="navLink mt-1 text-center ms-3" to="/SignUp">SignUp</NavLink>
+                                            <NavLink exact  activeClassName="active" className="navLink mt-1 text-center ms-3" to="/">Login</NavLink>
+                                            <NavLink exact  activeClassName="active" className="navLink mt-1 text-center ms-3" to="/SignUp">SignUp</NavLink>
                                         </Nav>
                                 } 
                             </Navbar.Collapse>
