@@ -1,6 +1,8 @@
 import React from 'react'
 import { Navbar, Container, Nav } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom'
+import { toast } from 'react-toastify';
+
 
 const navbar = () => {
     const isLogin = localStorage.getItem("isLoggedIn")
@@ -18,14 +20,21 @@ const navbar = () => {
                                         <Nav>
                                             <NavLink exact activeClassName="active" className="navLink mt-1 text-center ms-3" to="/Dashboard">Home</NavLink>
                                             <NavLink exact activeClassName="active" className="navLink mt-1 text-center ms-3" to="/CreateProject">Create Project</NavLink>
-                                            <NavLink exact activeClassName="active" className="navLink mt-1 text-center ms-3" to="/">Logout</NavLink>
+                                            <NavLink exact activeClassName="active" className="navLink mt-1 text-center ms-3" to="/" onClick={() => {
+                                                toast.success("Logout Sucessful", {
+                                                    position: "top-center",
+                                                    hideProgressBar: true,
+                                                    theme: 'colored',
+                                                    autoClose: 2000
+                                                })
+                                            }}>Logout</NavLink>
                                         </Nav>
                                     ) :
                                         <Nav>
-                                            <NavLink exact  activeClassName="active" className="navLink mt-1 text-center ms-3" to="/">Login</NavLink>
-                                            <NavLink exact  activeClassName="active" className="navLink mt-1 text-center ms-3" to="/SignUp">SignUp</NavLink>
+                                            <NavLink exact activeClassName="active" className="navLink mt-1 text-center ms-3" to="/">Login</NavLink>
+                                            <NavLink exact activeClassName="active" className="navLink mt-1 text-center ms-3" to="/SignUp">SignUp</NavLink>
                                         </Nav>
-                                } 
+                                }
                             </Navbar.Collapse>
                         </div>
                     </Container>

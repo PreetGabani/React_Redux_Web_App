@@ -35,8 +35,8 @@ const Login = () => {
     //     console.log(loginData);
     // }
 
-    const [isLoggedIn,setisLoggedIn] = useState(false)
-    localStorage.setItem("isLoggedIn",isLoggedIn)
+    const [isLoggedIn, setisLoggedIn] = useState(false)
+    localStorage.setItem("isLoggedIn", isLoggedIn)
     const Data = useSelector((state) => state.signUpReducer.SignUp);
     const history = useHistory()
 
@@ -45,19 +45,20 @@ const Login = () => {
             email: '',
             password: ''
         },
-        onSubmit: (val) => { 
+        onSubmit: (val) => {
             Data.map((item) => {
                 if (item.Email == val.email) {
                     if (item.Email == val.email && item.Password == val.password) {
+                        setTimeout(()=>
                         toast.success("Login Sucessful", {
                             position: "top-center",
                             hideProgressBar: true,
                             theme: 'colored',
                             autoClose: 2000
-                        })
+                        }),1000)
                         setisLoggedIn(true);
                         history.push("/Dashboard");
-                    } else if (item.Password !== val.password){
+                    } else if (item.Password !== val.password) {
                         toast.error("Password Not Mached", {
                             position: "top-center",
                             hideProgressBar: true,

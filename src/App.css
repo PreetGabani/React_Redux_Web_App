@@ -75,7 +75,8 @@
 }
 
 .css-bhp9pd-MuiPaper-root-MuiCard-root.LoginCard:hover{
-    background-color: rgb(216, 216, 216)
+    background-color: rgb(216, 216, 216);
+    box-shadow: 0 8px 50px 0 rgba(0,0,0,1) !important;
 }
 
 .logindiv{
@@ -109,7 +110,8 @@
 }
 
 .css-bhp9pd-MuiPaper-root-MuiCard-root.signUpCard:hover{
-    background-color: rgb(216, 216, 216)
+    background-color: rgb(216, 216, 216);
+    box-shadow: 0 8px 50px 0 rgba(0,0,0,1) !important;
 }
 
 .signUpBtn.css-1fu7jd5-MuiButtonBase-root-MuiButton-root{
@@ -190,7 +192,8 @@
 }
 
 .createProjectCard.css-bhp9pd-MuiPaper-root-MuiCard-root:hover{
-    background-color: rgb(216, 216, 216)
+    background-color: rgb(216, 216, 216);
+    box-shadow: 0 8px 50px 0 rgba(0,0,0,1) !important;
 }
 
 .MuiPaper-root.MuiPaper-elevation2{
@@ -217,7 +220,8 @@
 }
 
 .editProjectStartCard.css-bhp9pd-MuiPaper-root-MuiCard-root:hover{
-    background-color: rgb(216, 216, 216)
+    background-color: rgb(216, 216, 216);
+    box-shadow: 0 8px 50px 0 rgba(0,0,0,1) !important;
 }
 
 .load {
@@ -255,8 +259,7 @@
         margin-left: 100px;
         margin-right: 100px;
         margin-bottom: 50px;
-    }
-    
+    }  
 }
 
 @media only screen and (max-width: 991px) {
