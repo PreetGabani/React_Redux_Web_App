@@ -77,6 +77,7 @@
 .css-bhp9pd-MuiPaper-root-MuiCard-root.LoginCard:hover{
     background-color: rgb(216, 216, 216);
     box-shadow: 0 8px 50px 0 rgba(0,0,0,1) !important;
+    transition: 2s;
 }
 
 .logindiv{
@@ -112,6 +113,7 @@
 .css-bhp9pd-MuiPaper-root-MuiCard-root.signUpCard:hover{
     background-color: rgb(216, 216, 216);
     box-shadow: 0 8px 50px 0 rgba(0,0,0,1) !important;
+    transition: 2s;
 }
 
 .signUpBtn.css-1fu7jd5-MuiButtonBase-root-MuiButton-root{
@@ -194,6 +196,7 @@
 .createProjectCard.css-bhp9pd-MuiPaper-root-MuiCard-root:hover{
     background-color: rgb(216, 216, 216);
     box-shadow: 0 8px 50px 0 rgba(0,0,0,1) !important;
+    transition: 2s;
 }
 
 .MuiPaper-root.MuiPaper-elevation2{
@@ -202,6 +205,8 @@
 
 .MuiPaper-root.MuiPaper-elevation2:hover{
     background-color:rgb(208, 208, 208);
+    box-shadow: 0 8px 50px 0 rgba(0,0,0,1) !important;
+    transition: 2s;
 }
 
 .MTableHeader-header-13{
@@ -222,6 +227,7 @@
 .editProjectStartCard.css-bhp9pd-MuiPaper-root-MuiCard-root:hover{
     background-color: rgb(216, 216, 216);
     box-shadow: 0 8px 50px 0 rgba(0,0,0,1) !important;
+    transition: 2s;
 }
 
 .load {
@@ -245,7 +251,13 @@
   }
   @keyframes p4 {
       100% {background-size:120% 100% }
-  }
+}
+
+.MuiTableFooter-root{
+    display: flex !important;
+    justify-content: center;
+
+}
 
 @media only screen and (max-width: 1400px) {
     .css-bhp9pd-MuiPaper-root-MuiCard-root.signUpCard{

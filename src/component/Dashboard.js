@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from './Navbar';
-import MaterialTable from 'material-table';
+import MaterialTable from "material-table";
 import { useSelector } from 'react-redux'
 import { DeleteCreateProjectData } from "../Redux/action/actionindex"
 import { useDispatch } from 'react-redux';
@@ -33,7 +33,8 @@ const Dashboard = () => {
                             // search:false,
                             // title: false,
                             // paging: false,
-                            actionsColumnIndex: -1
+                            actionsColumnIndex: -1,
+                            overflowX:true
                         }}
                         actions={[
                             {

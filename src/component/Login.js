@@ -49,13 +49,13 @@ const Login = () => {
             Data.map((item) => {
                 if (item.Email == val.email) {
                     if (item.Email == val.email && item.Password == val.password) {
-                        setTimeout(()=>
-                        toast.success("Login Sucessful", {
-                            position: "top-center",
-                            hideProgressBar: true,
-                            theme: 'colored',
-                            autoClose: 2000
-                        }),1000)
+                        setTimeout(() =>
+                            toast.success("Login Sucessful", {
+                                position: "top-center",
+                                hideProgressBar: true,
+                                theme: 'colored',
+                                autoClose: 2000
+                            }), 1000)
                         setisLoggedIn(true);
                         history.push("/Dashboard");
                     } else if (item.Password !== val.password) {
