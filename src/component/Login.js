@@ -1,44 +1,27 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from './Navbar';
 import { Card, TextField, Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 import * as Yup from 'yup';
 import { useFormik } from "formik"
 import { useSelector } from 'react-redux'
-import { useHistory } from 'react-router-dom';
+import { useHistory, Redirect } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 
 const Login = () => {
 
-    // const [loginData,setLoginData] = useState({
-    //     email:"",
-    //     password:""
-    // })
-
-    // const handleEmail=(e)=>{
-    //     setLoginData({
-    //         ...loginData,
-    //             email:e.target.value
-    //     })
-    // }
-
-    // const handlePassword=(e)=>{
-    //     setLoginData({
-    //         ...loginData,
-    //             password:e.target.value
-    //     })
-    // }
-
-    // const handleLogin=(e)=>{
-    //     e.preventDefault();
-    //     console.log(loginData);
-    // }
-
-    const [isLoggedIn, setisLoggedIn] = useState(false)
-    localStorage.setItem("isLoggedIn", isLoggedIn)
-    const Data = useSelector((state) => state.signUpReducer.SignUp);
     const history = useHistory()
+
+    useEffect(() => {
+        const isLogin = localStorage.getItem("isLoggedIn")
+        if (isLogin == "true") {
+            history.push("/Dashboard");
+        }
+
+    }, [])
+
+    const Data = useSelector((state) => state.signUpReducer.SignUp);
 
     const formik = useFormik({
         initialValues: {
@@ -56,7 +39,7 @@ const Login = () => {
                                 theme: 'colored',
                                 autoClose: 2000
                             }), 1000)
-                        setisLoggedIn(true);
+                        localStorage.setItem("isLoggedIn", "true")
                         history.push("/Dashboard");
                     } else if (item.Password !== val.password) {
                         toast.error("Password Not Mached", {

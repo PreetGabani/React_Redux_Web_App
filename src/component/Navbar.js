@@ -20,12 +20,14 @@ const navbar = () => {
                                             <NavLink exact activeClassName="active" className="navLink mt-1 text-center ms-3" to="/Dashboard">Home</NavLink>
                                             <NavLink exact activeClassName="active" className="navLink mt-1 text-center ms-3" to="/CreateProject">Create Project</NavLink>
                                             <NavLink exact activeClassName="active" className="navLink mt-1 text-center ms-3" to="/" onClick={() => {
+                                                localStorage.removeItem("isLoggedIn")
                                                 toast.success("Logout Sucessful", {
                                                     position: "top-center",
                                                     hideProgressBar: true,
                                                     theme: 'colored',
                                                     autoClose: 2000
                                                 })
+                                                // window.location.reload();
                                             }}>Logout</NavLink>
                                         </Nav>
                                     ) :

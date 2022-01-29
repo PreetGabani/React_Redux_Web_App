@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from './Navbar';
 import { Card, TextField, Button } from '@mui/material';
 import { Link } from 'react-router-dom';
@@ -12,39 +12,15 @@ import { useHistory } from 'react-router-dom';
 
 const SignUp = () => {
 
-    // const [signUpData,setSignUpData] = useState({
-    //     username:"",
-    //     email:"",
-    //     password:""
-    // })
-
-    // const handleUserName=(e)=>{
-    //     setSignUpData({
-    //         ...signUpData,
-    //             username:e.target.value
-    //     })
-    // }
-
-    // const handleEmail=(e)=>{
-    //     setSignUpData({
-    //         ...signUpData,
-    //             email:e.target.value
-    //     })
-    // }
-
-    // const handlePassword=(e)=>{
-    //     setSignUpData({
-    //         ...signUpData,
-    //             password:e.target.value
-    //     })
-    // }
-
-    // const handleSignUp=(e)=>{
-    //     e.preventDefault();
-    //     console.log(signUpData);
-    // }
-
     const history = useHistory()
+
+    useEffect(() => {
+        const isLogin = localStorage.getItem("isLoggedIn")
+        if (isLogin == "true") {
+            history.push("/Dashboard");
+        }
+
+    }, [])
 
 
     const formik = useFormik({

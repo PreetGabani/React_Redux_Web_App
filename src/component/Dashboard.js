@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from './Navbar';
-import MaterialTable from "material-table";
+import MaterialTable from 'material-table';
 import { useSelector } from 'react-redux'
 import { DeleteCreateProjectData } from "../Redux/action/actionindex"
 import { useDispatch } from 'react-redux';
@@ -34,14 +34,13 @@ const Dashboard = () => {
                             // title: false,
                             // paging: false,
                             actionsColumnIndex: -1,
-                            overflowX:true
+                            exportButton:true,
                         }}
                         actions={[
                             {
                                 icon: 'delete',
                                 tooltip: 'Delete',
                                 onClick: (event, rowData) => {
-                                    // localStorage.getItem("CreateProjectReducer")
                                     const confirmBox = window.confirm("Do you really want to delete ")
                                     if (confirmBox === true) {
                                         dispatch(DeleteCreateProjectData(rowData.id))
