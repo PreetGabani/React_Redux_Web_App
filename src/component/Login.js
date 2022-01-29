@@ -1,24 +1,23 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import Navbar from './Navbar';
 import { Card, TextField, Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 import * as Yup from 'yup';
 import { useFormik } from "formik"
 import { useSelector } from 'react-redux'
-import { useHistory, Redirect } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 
 const Login = () => {
 
-    const history = useHistory()
+    const history = useHistory();
 
     useEffect(() => {
         const isLogin = localStorage.getItem("isLoggedIn")
         if (isLogin == "true") {
             history.push("/Dashboard");
         }
-
     }, [])
 
     const Data = useSelector((state) => state.signUpReducer.SignUp);
@@ -33,7 +32,7 @@ const Login = () => {
                 if (item.Email == val.email) {
                     if (item.Email == val.email && item.Password == val.password) {
                         setTimeout(() =>
-                            toast.success("Login Sucessful", {
+                            toast.success("Login Successful", {
                                 position: "top-center",
                                 hideProgressBar: true,
                                 theme: 'colored',

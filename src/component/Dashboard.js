@@ -44,7 +44,7 @@ const Dashboard = () => {
                                     const confirmBox = window.confirm("Do you really want to delete ")
                                     if (confirmBox === true) {
                                         dispatch(DeleteCreateProjectData(rowData.id))
-                                        toast.success("Delete Sucessfully", {
+                                        toast.success("Delete Successful", {
                                             position: "top-center",
                                             hideProgressBar: true,
                                             theme: 'colored',

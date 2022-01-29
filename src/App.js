@@ -1,8 +1,9 @@
 import React, { Suspense, lazy } from 'react'
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { ToastContainer, Zoom } from 'react-toastify';
+import { BrowserRouter, Route, Switch, useHistory } from 'react-router-dom';
+import { ToastContainer, Zoom, toast } from 'react-toastify';
 import Protected from './component/Protected';
 import Loader from "./component/Loader"
+import Idle from './component/Idle';
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import 'react-toastify/dist/ReactToastify.css';
@@ -27,11 +28,11 @@ const ProjectEdit = lazy(() => new Promise(resolve => {
 
 
 const App = () => {
-
   return (
     <>
       <BrowserRouter>
         <ToastContainer transition={Zoom} className="Toast" />
+        <Idle />
         <Switch>
           <Suspense fallback={<Loader />}>
             <Route exact path="/" component={Login} />

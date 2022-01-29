@@ -31,7 +31,7 @@ const SignUp = () => {
         },
         onSubmit: (val,{resetForm}) => {
             dispatch(SignUpData(val.username, val.email, val.password))
-            toast.success("Register Sucessfully",{
+            toast.success("Register Successfull",{
                 position: "top-center",
                 hideProgressBar: true,
                 theme:'colored',

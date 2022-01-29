@@ -30,7 +30,7 @@ const ProjectEdit = () => {
         },
         onSubmit: (val, { resetForm }) => {
             dispatch(EditCreateProjectData(val.title, val.member, val.period, id))
-            toast.success("Project Updated Sucessfully", {
+            toast.success("Project Updated Successful", {
                 position: "top-center",
                 hideProgressBar: true,
                 theme: 'colored',

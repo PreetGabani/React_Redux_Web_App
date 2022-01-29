@@ -21,7 +21,7 @@ const CreateProject = () => {
         },
         onSubmit: (val, { resetForm }) => {
             dispatch(CreateProjectData(val.title, val.member, val.period))
-            toast.success("Project Created Sucessfully", {
+            toast.success("Project Created Successful", {
                 position: "top-center",
                 hideProgressBar: true,
                 theme: 'colored',
